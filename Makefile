@@ -1,5 +1,5 @@
 # the compiler: gcc for C program, define as g++ for C++
-CC = g++
+CC = gcc
 
 INC = -I /Library/gurobi810/mac64/include/
 
@@ -13,8 +13,8 @@ TARGET = mip
 
 all: $(TARGET)
 
-$(TARGET): $(TARGET).cc
-	$(CC) $(INC) $(CFLAGS) -v -o $(TARGET) $(TARGET).cc
+$(TARGET): $(TARGET).c
+	$(CC) $(INC) $(CFLAGS) -v -o $(TARGET) $(TARGET).c
 
 clean:
 	$(RM) $(TARGET)
