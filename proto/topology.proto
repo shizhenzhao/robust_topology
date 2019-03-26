@@ -4,7 +4,8 @@ package topology;
 
 message BlockProto {
   optional int32 port_speed = 1 [default = 10];  // Unit is Gbps.
-  optional int32 radix = 2;
+  optional int32 egress_radix = 2;
+  optional int32 ingress_radix = 3;
 }
 
 message PhysicalLinkProto {

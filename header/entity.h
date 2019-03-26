@@ -9,6 +9,8 @@ namespace topology {
 using Port = int;
 using OcsIndex = int;
 using BlockIndex = int;
+using BlockLevelTopology = std::unordered_map<BlockIndex, std::unordered_map<BlockIndex, int>>;
+using BlockOcsLevelTopology = std::unordered_map<BlockIndex, std::unordered_map<OcsIndex, int>>;
 
 struct Ocs {
   OcsIndex index;
@@ -20,7 +22,7 @@ struct Ocs {
 
 struct Block {
   BlockIndex index;
-  int speed;  // In Gbps
+  int port_speed;  // In Gbps
   std::vector<Port> ingress_ports;
   std::vector<Port> egress_ports;
 };

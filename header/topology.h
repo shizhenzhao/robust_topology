@@ -1,6 +1,7 @@
 #ifndef TOPOLOGY_H
 #define TOPOLOGY_H
 
+#include<unordered_map>
 #include<vector>
 
 #include "header/entity.h"
@@ -27,6 +28,19 @@ class Topology {
   int NumBlockToBlockLinks(BlockIndex block1_index, BlockIndex block2_index);
 
  private:
+  // Physical topology.
+  std::vector<Block> blocks_;
+  std::vector<Ocs> ocses_;
+  BlockOcsLevelTopology block_to_ocs_link_count_;
+  BlockOcsLevelTopology ocs_to_block_link_count_;
+
+  // Query support.
+  std::unordered_map<Port, BlockIndex> port_to_block_;
+  std::unordered_map<Port, OcsIndex> port_to_ocs_;
+
+  // Logical topology.
+  std::vector<BlockLevelTopology> per_ocs_logical_topology_;
+  BlockLevelTopology logical_topology_;
 };
 
 }  // namespace topology
