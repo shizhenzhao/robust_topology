@@ -34,7 +34,7 @@ topology.pb.*:
 	protoc -I=$(PROTO_DIR) --cpp_out=$(PROTO_DIR) $(PROTO_DIR)/topology.proto
 
 clean:
-	$(RM) $(TARGET) $(PROTO_DIR)/*.pb* $(OBJ_DIR)/*
+	$(RM) $(TARGET) $(PROTO_DIR)/*.pb* $(OBJ_DIR)/* $(HEADER_DIR)/*.gch
 
 run:
 	./$(TARGET)
