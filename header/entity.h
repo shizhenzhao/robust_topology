@@ -7,8 +7,8 @@
 namespace topology {
 
 using Port = int;
-using OcsIndex = int;
-using BlockIndex = int;
+using OcsIndex = unsigned int;
+using BlockIndex = unsigned int;
 using BlockLevelTopology = std::unordered_map<BlockIndex, std::unordered_map<BlockIndex, int>>;
 using BlockOcsLevelTopology = std::unordered_map<BlockIndex, std::unordered_map<OcsIndex, int>>;
 
@@ -17,7 +17,7 @@ struct Ocs {
   std::vector<Port> ingress_ports;
   std::vector<Port> egress_ports;
   // A map from ingress ports to egress ports.
-  std::unordered_map<int, int> interconnection;
+  std::unordered_map<Port, Port> interconnection;
 };
 
 struct Block {

@@ -24,7 +24,7 @@ message LogicalLinkProto {
 
 message PhysicalTopology {
   repeated BlockProto blocks = 1;
-  optional int32 num_ocses = 2;
+  optional uint32 num_ocses = 2;
   repeated PhysicalLinkProto links = 3;
 }
 
