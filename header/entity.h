@@ -10,6 +10,7 @@ using Port = int;
 using OcsIndex = unsigned int;
 using BlockIndex = unsigned int;
 using BlockLevelTopology = std::unordered_map<BlockIndex, std::unordered_map<BlockIndex, int>>;
+using FractionalMatrix = std::unordered_map<BlockIndex, std::unordered_map<BlockIndex, double>>;
 using BlockOcsLevelTopology = std::unordered_map<BlockIndex, std::unordered_map<OcsIndex, int>>;
 
 struct Ocs {

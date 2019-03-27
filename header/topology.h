@@ -12,7 +12,11 @@ namespace topology {
 class Topology {
  public:
   explicit Topology(const PhysicalTopology& physical_topology);
-  
+
+  // Disable copy constructor and copy assignment operator.
+  Topology (const Topology&) = delete;
+  Topology& operator= (const Topology&) = delete;
+
   // APIs for setting up logical topology.
   bool SetOcsConfiguration(OcsIndex ocs_index, const std::unordered_map<int, int>& configuration);
 
